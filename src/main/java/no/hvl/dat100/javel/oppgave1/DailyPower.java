@@ -46,8 +46,9 @@ public class DailyPower {
 
         double support = 0;
 
-        // TODO
-
+        if(price > THRESHOLD){
+            support += ((usage * price) * PERCENTAGE);
+        }
         return support;
     }
 
@@ -55,9 +56,11 @@ public class DailyPower {
     public static double computePowerSupport(double[] usage, double[] prices) {
 
         double support = 0;
-
-        // TODO
-
+        //Man må gå utifra at pris og forbruk har lik tabbellstørrelse, og spotpris skal beregnes på samme
+        // index på begge tabellene. Det gjør at man bare trenger en for-løkke.
+        for(int i = 0; i < usage.length; i++){
+            support += getSupport(usage[i], prices[i]);
+        }
         return support;
     }
 
