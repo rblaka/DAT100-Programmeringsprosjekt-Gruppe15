@@ -11,14 +11,21 @@ public class DayMain {
 
         double[] powerprices_day = DayPowerData.powerprices_day;
 
+
+
         System.out.println("==============");
         System.out.println("OPPGAVE 1");
         System.out.println("==============");
         System.out.println();
 
-        DailyPower.printPowerPrices(powerprices_day);
+        //Test av metoder:
+        DailyPower.printPowerPrices(powerprices_day); //Test av oppgave 1 a)
         System.out.println();
-        DailyPower.printPowerUsage(powerusage_day);
+        DailyPower.printPowerUsage(powerusage_day); //Test av oppgave 1 b)
+        System.out.println();
+        System.out.printf("strømforbruk 24-timer: " + "%.2f kwh ", + DailyPower.computePowerUsage(powerusage_day)); //Test av oppgave 1 c)
+        System.out.println();
+        System.out.printf("Spotpris for 24-timer: " + "%.2f kr ", + DailyPower.computeSpotPrice(powerusage_day, powerprices_day)); //Test av oppgave 1 d)
         System.out.println();
         /*
         TODO

@@ -18,11 +18,10 @@ public class DailyPower {
 
     // c) compute power usage for a single day
     public static double computePowerUsage(double[] usage) {
-
         double sum = 0;
-
-        // TODO
-
+        for(int i = 0; i < usage.length; i++){
+            sum += usage[i];
+        }
         return sum;
     }
 
@@ -30,8 +29,11 @@ public class DailyPower {
     public static double computeSpotPrice(double[] usage, double[] prices) {
 
         double price = 0;
-
-        // TODO
+        //Man må gå utifra at pris og forbruk har lik tabbellstørrelse, og spotpris skal beregnes på samme
+        // index på begge tabellene. Det gjør at man bare trenger en for-løkke.
+        for(int i = 0; i < usage.length; i++){
+            price += prices[i] * usage[i];
+        }
 
         return price;
     }
