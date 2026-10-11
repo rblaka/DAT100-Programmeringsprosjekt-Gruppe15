@@ -79,10 +79,12 @@ public class DailyPower {
     // g) compute peak usage during a single day
     public static double findPeakUsage(double[] usage) {
 
-        double temp_max = 0;
+        double temp_max = usage[0];
 
-        // TODO
-
+        for(int i = 1; i < usage.length; i++){
+            if(temp_max < usage[i])
+            temp_max = usage[i];
+        }
         return temp_max;
     }
 

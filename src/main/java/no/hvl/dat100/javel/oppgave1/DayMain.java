@@ -31,6 +31,8 @@ public class DayMain {
         System.out.println();
         System.out.printf("Norgespris for 24-timer: " + "%.2f kr ", + DailyPower.computeNorgesPrice(powerusage_day)); //Test av Oppgave g)
         System.out.println();
+        System.out.printf("Peakforbruk ila 24-timer: " + "%.2f kwh ", + DailyPower.findPeakUsage(powerusage_day)); //Test av Oppgave h)
+        System.out.println();
         /*
         TODO
 
