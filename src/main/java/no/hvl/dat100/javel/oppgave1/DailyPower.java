@@ -11,9 +11,9 @@ public class DailyPower {
 
     // b) print power usage during a day
     public static void printPowerUsage(double[] usage) {
-
-        // TODO
-
+        for(int i = 0; i < usage.length; i++){
+            System.out.printf("%.2f kwh ", usage[i]);
+        }
     }
 
     // c) compute power usage for a single day
