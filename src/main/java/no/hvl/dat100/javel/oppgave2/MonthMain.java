@@ -1,5 +1,6 @@
 package no.hvl.dat100.javel.oppgave2;
 
+import no.hvl.dat100.javel.oppgave1.DailyPower;
 import no.hvl.dat100.javel.oppgave1.DayPowerData;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -17,6 +18,12 @@ public class MonthMain {
         System.out.println("==============");
         System.out.println();
 
+        //Test av metoder:
+        MonthlyPower.print_PowerUsage(power_usage_month); //Test av Oppgave2 a)
+        System.out.println();
+        MonthlyPower.print_PowerPrices(power_prices_month); //Test av Oppgave2 b)
+        System.out.println();
+        System.out.printf("Månedlig strømforbruk: " + "%.2f kwh ", + MonthlyPower.computePowerUsage(power_usage_month)); //Test av Oppgave2 c)
         /*
         TODO
 
