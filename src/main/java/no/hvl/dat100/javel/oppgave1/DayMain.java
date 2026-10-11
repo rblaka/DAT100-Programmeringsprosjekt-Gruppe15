@@ -29,6 +29,8 @@ public class DayMain {
         System.out.println();
         System.out.printf("Strømstøtte for 24-timer: " + "%.2f kr ", + DailyPower.computePowerSupport(powerusage_day, powerprices_day)); //Test av Oppgave e) og  f)
         System.out.println();
+        System.out.printf("Norgespris for 24-timer: " + "%.2f kr ", + DailyPower.computeNorgesPrice(powerusage_day)); //Test av Oppgave g)
+        System.out.println();
         /*
         TODO
 

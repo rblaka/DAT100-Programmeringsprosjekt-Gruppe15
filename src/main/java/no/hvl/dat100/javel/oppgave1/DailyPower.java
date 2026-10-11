@@ -70,9 +70,9 @@ public class DailyPower {
     public static double computeNorgesPrice(double[] usage) {
 
         double price = 0;
-
-        // TODO
-
+        for(int i = 0; i < usage.length; i++){
+            price += NORGESPRIS_KWH * usage[i];
+        }
         return price;
     }
 
