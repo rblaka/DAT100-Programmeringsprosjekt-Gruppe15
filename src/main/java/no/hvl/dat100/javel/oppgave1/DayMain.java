@@ -11,8 +11,6 @@ public class DayMain {
 
         double[] powerprices_day = DayPowerData.powerprices_day;
 
-
-
         System.out.println("==============");
         System.out.println("OPPGAVE 1");
         System.out.println("==============");
@@ -33,15 +31,6 @@ public class DayMain {
         System.out.println();
         System.out.printf("Peakforbruk ila 24-timer: " + "%.2f kwh ", + DailyPower.findPeakUsage(powerusage_day)); //Test av Oppgave h)
         System.out.println();
-        System.out.printf("Gjennomsnittsforbruk 24-timer: " + "%.2f kwh ", + DailyPower.findAvgPower(powerusage_day)); //Test av Oppgave h)
-        System.out.println();
-        /*
-        TODO
-
-         Write code that tests the methods you implement in the DailyPower class
-         Remember to teste the methods as you implement them
-         Remember to also to check that you get the expected results
-         */
-
+        System.out.printf("Gjennomsnittsforbruk 24-timer: " + "%.2f kwh ", + DailyPower.findAvgPower(powerusage_day)); //Test av Oppgave j)
     }
 }
