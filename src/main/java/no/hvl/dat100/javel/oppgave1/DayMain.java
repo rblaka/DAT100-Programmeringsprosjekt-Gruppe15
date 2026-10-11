@@ -33,6 +33,8 @@ public class DayMain {
         System.out.println();
         System.out.printf("Peakforbruk ila 24-timer: " + "%.2f kwh ", + DailyPower.findPeakUsage(powerusage_day)); //Test av Oppgave h)
         System.out.println();
+        System.out.printf("Gjennomsnittsforbruk 24-timer: " + "%.2f kwh ", + DailyPower.findAvgPower(powerusage_day)); //Test av Oppgave h)
+        System.out.println();
         /*
         TODO
 
