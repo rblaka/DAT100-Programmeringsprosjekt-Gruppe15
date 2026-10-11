@@ -4,9 +4,9 @@ public class DailyPower {
 
     // a) print power prices during a day
     public static void printPowerPrices(double[] prices) {
-
-        // TODO
-
+        for(int i = 0; i < prices.length; i++){
+            System.out.printf("%.2f NOK ", prices[i]);
+        }
     }
 
     // b) print power usage during a day

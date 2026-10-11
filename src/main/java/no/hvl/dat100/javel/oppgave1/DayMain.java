@@ -16,6 +16,7 @@ public class DayMain {
         System.out.println("==============");
         System.out.println();
 
+        DailyPower.printPowerPrices(powerprices_day);
         /*
         TODO
 
