@@ -11,11 +11,30 @@ public class CustomerMain {
         System.out.println("==============");
         System.out.println();
 
-        /*
-        TODO
+        Customer kunde = new Customer("Rune", "rune@gmail.com", 1001, PowerAgreementType.NORGESPRICE);
+        //Test av metoder:
 
-         Write code that creates a Customer object and teste the methods implemented in the class
+        //Test av toString() metoden
+        System.out.println(kunde.toString());
 
-        */
+        System.out.println();
+        System.out.println("Endringer: ");
+
+        //Test av setName() og getName() metodene. Forventet utskrift: Kata
+        kunde.setName("Kata");
+        System.out.println(kunde.getName());
+
+        //Test av setEmail() og getEmail() metodene. Forventet utskrift: kata@gmail.com
+        kunde.setEmail("Kata@gmail.com");
+        System.out.println(kunde.getEmail());
+
+        //Test av setCustomer_id() og getCustomer_id() metodene. Forventet utskrift: 1002
+        kunde.setCustomer_id(1002);
+        System.out.println(kunde.getCustomer_id());
+
+        //Test av setAgreement() og getAgreement() metodene. Forventet utskrift: "SPOTPRICE"
+        kunde.setAgreement(PowerAgreementType.SPOTPRICE);
+        System.out.println(kunde.getAgreement());
+
     }
 }
