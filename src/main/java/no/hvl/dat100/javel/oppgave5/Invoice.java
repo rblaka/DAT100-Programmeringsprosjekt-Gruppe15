@@ -43,11 +43,12 @@ public class Invoice {
 
 public String toString(){
     computeAmount();
-
+    String amountTrunk = String.format("%.2f", amount);//Trimmer bort decimalene til to plasser
+    String usageTrunk = String.format("%.2f", MonthlyPower.computePowerUsage(usage)); //Trimmer bort decimalene til to plasser
     String output =
             "Month: " + month + "\r\n" +
-            "Usage: " +  MonthlyPower.computePowerUsage(usage) + "\r\n" +
-            "Amount: " + amount;
+            "Usage: " + usageTrunk  + " kwh" + "\r\n" +
+            "Amount: " + amountTrunk + " kr";
     return output;
 }
     public void printInvoice() {
