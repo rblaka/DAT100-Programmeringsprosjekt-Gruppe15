@@ -30,6 +30,8 @@ public class MonthMain {
         System.out.println();
         System.out.printf("Månedlig spotpris: " + "%.2f kr ", + MonthlyPower.computeSpotPrice(power_usage_month, power_prices_month)); //Test av Oppgave2 e)
         System.out.println();
+        System.out.printf("Månedlig strømstøtte: " + "%.2f kr ", + MonthlyPower.computePowerSupport(power_usage_month, power_prices_month)); //Test av Oppgave2 f)
+        System.out.println();
         /*
         TODO
 

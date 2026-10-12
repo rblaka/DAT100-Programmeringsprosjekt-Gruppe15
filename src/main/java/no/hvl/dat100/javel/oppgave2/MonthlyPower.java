@@ -87,12 +87,28 @@ public class MonthlyPower {
     }
 
     // f) power support for the month
+    private static final double THRESHOLD = 0.9375;
+    private static final double PERCENTAGE = 0.9;
+    /*Gjenbruker kode fra oppgave 1. Alternativt kunne jeg hentet metoden fra oppgave 1,
+     men da ville ikke oppgave 2 kunne kjøres selvstendig.*/
+    private static double getSupport(double usage, double price) {
+
+        double support = 0;
+
+        if(price > THRESHOLD){
+            support += (usage * (price-THRESHOLD)) * PERCENTAGE;
+        }
+        return support;
+    }
     public static double computePowerSupport(double[][] usage, double[][] prices) {
 
         double support = 0;
 
-        // TODO
-
+        for(int i = 0; i < usage.length; i++){
+            for(int j = 0; j < usage[i].length; j++){
+                support += getSupport(usage[i][j], prices[i][j]);
+            }
+        }
         return support;
     }
 
