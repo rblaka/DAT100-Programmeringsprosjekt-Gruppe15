@@ -31,5 +31,12 @@ public class CustomersMain {
         Customer newCustomer = customers.getCustomer(1001);
         System.out.println(newCustomer.toString());
 
+        //Sletter kunde med kundenummer 1001 fra listen og lagrer kunden i et eget kundeobjekt. Sjekker om antallet i listen er oppdatert.
+        newCustomer = customers.removeCustomer(10);
+        newCustomer = customers.removeCustomer(1001);
+        
+        System.out.println(customers.countNonNull());
+
+
     }
 }

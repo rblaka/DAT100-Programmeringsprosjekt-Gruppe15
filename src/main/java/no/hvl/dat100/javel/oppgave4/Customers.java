@@ -10,6 +10,7 @@ public class Customers {
     public Customers(int size) {
         customers = new Customer[size];
 
+
     }
 
     // b) count number of non-null references
@@ -35,12 +36,17 @@ public class Customers {
             if( i == customers.length){
                 break;
             }
-            else if(customers[i].getCustomer_id() == customer_id){
-                funnet = true;
-                c = customers[i];
+            else if(customers[i] != null){
+                if(customers[i].getCustomer_id() == customer_id){
+                    funnet = true;
+                    c = customers[i];
+                }
+            }
+            if(i < customers.length){
+                i++;
             }
             else{
-                i++;
+                break;
             }
         }
         return c;
@@ -72,8 +78,25 @@ public class Customers {
         boolean deleted = false;
         Customer c = null;
 
-        // TODO
-
+        int i = 0;
+        while(!deleted){
+            if( i == customers.length){
+                break;
+            }
+            else if(customers[i] != null){
+                if(customers[i].getCustomer_id() == customer_id){
+                    c = customers[i];
+                    customers[i] = null;
+                    deleted = true;
+                }
+            }
+            if(i < customers.length){
+                i++;
+            }
+            else{
+                break;
+            }
+        }
         return c;
     }
 
