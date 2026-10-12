@@ -22,6 +22,8 @@ public class CustomersMain {
 
         customers.addCustomer(Customer_Rune);
         customers.addCustomer(Customer_Kata);
+        customers.addCustomer(Customer_Rune);
+        customers.addCustomer(Customer_Kata);
 
 
         //Sjekker hvor mange kunder som ligger i listen min.
@@ -34,8 +36,14 @@ public class CustomersMain {
         //Sletter kunde med kundenummer 1001 fra listen og lagrer kunden i et eget kundeobjekt. Sjekker om antallet i listen er oppdatert.
         newCustomer = customers.removeCustomer(10);
         newCustomer = customers.removeCustomer(1001);
-        
+
         System.out.println(customers.countNonNull());
+
+        //Lager ny liste med eksisterende kunder i listen.
+        customers.addCustomer(Customer_Rune);
+        Customer[] kundeliste = customers.getCustomers();
+
+
 
 
     }
