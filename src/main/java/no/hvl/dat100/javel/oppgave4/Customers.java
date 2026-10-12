@@ -50,12 +50,19 @@ public class Customers {
     public boolean addCustomer(Customer c) {
 
         boolean inserted = false;
-
-        if(countNonNull() < customers.length){
-            customers[countNonNull()] = c;
-            inserted = true;
+        int i = 0;
+        while(!inserted){
+            if(customers[i] == null){
+                customers[i] = c;
+                inserted = true;
+            }
+            else if(i < customers.length){
+                i++;
+            }
+            else{
+                break;
+            }
         }
-
         return inserted;
     }
 
