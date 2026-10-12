@@ -27,7 +27,9 @@ public class MonthMain {
         System.out.println();
         System.out.println("Over månedlig forbruk? "+ MonthlyPower.exceedThreshold(power_usage_month, 1000) + " (1000kwh)"); //Test av Oppgave2 d)
         System.out.println("Over månedlig forbruk? "+ MonthlyPower.exceedThreshold(power_usage_month, 5000) + " (5000kwh)"); //Test av Oppgave2 d)
-
+        System.out.println();
+        System.out.printf("Månedlig spotpris: " + "%.2f kr ", + MonthlyPower.computeSpotPrice(power_usage_month, power_prices_month)); //Test av Oppgave2 e)
+        System.out.println();
         /*
         TODO
 

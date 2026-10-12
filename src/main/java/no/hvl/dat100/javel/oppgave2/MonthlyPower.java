@@ -48,15 +48,15 @@ public class MonthlyPower {
 
         boolean exceeded = false;
         double usage = 0;
-        boolean stop = false;
+
 
         int i = 0;
         int j = 0;
-        while(!stop){
+        while(!exceeded){
             usage += powerusage[i][j];
             if(usage > threshold){
                 exceeded = true;
-                stop = true;
+
             }
             else if( j < powerusage[i].length-1){
                 j++;
@@ -66,7 +66,7 @@ public class MonthlyPower {
                 j = 0;
             }
             if(i >= powerusage.length){
-                stop = true;
+                break;
             }
         }
         return exceeded;
@@ -77,7 +77,11 @@ public class MonthlyPower {
 
         double price = 0;
 
-        // TODO
+        for(int i = 0; i < usage.length; i++){
+            for(int j = 0; j < usage[i].length; j++){
+                price += prices[i][j] * usage[i][j];
+            }
+        }
 
         return price;
     }
