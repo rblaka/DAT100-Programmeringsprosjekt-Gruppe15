@@ -12,12 +12,24 @@ public class CustomersMain {
         System.out.println("==============");
         System.out.println();
 
-        /*
-        TODO
+        //Test av metoder:
+        //Lager liste med plass til 5 kunder.
+        Customers customers = new Customers(5);
 
-         Write code that uses and tests the methods implemented in the Customers class
+        //Lager to kunder og legger disse til kundelisten min.
+        Customer Customer_Rune = new Customer("Rune","rune@gmail.com", 1001, PowerAgreementType.NORGESPRICE);
+        Customer Customer_Kata = new Customer("Kata","kata@gmail.com", 1002, PowerAgreementType.SPOTPRICE);
 
-        */
+        customers.addCustomer(Customer_Rune);
+        customers.addCustomer(Customer_Kata);
+
+
+        //Sjekker hvor mange kunder som ligger i listen min.
+        System.out.println(customers.countNonNull());
+
+        //Lager en ny kunde og henter peker fra tidligere kunde fra listen og setter den inn.
+        Customer newCustomer = customers.getCustomer(1001);
+        System.out.println(newCustomer.toString());
 
     }
 }

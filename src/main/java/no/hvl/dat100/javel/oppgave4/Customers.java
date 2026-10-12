@@ -8,19 +8,19 @@ public class Customers {
 
     // a) Complete constructor
     public Customers(int size) {
-
-        // TODO
+        customers = new Customer[size];
 
     }
 
     // b) count number of non-null references
     public int countNonNull() {
-
-
         int count = 0;
 
-        // TODO
-
+        for (int i = 0; i < customers.length; i++) {
+            if(customers[i] != null) {
+                count++;
+            }
+        }
         return count;
     }
 
@@ -30,8 +30,19 @@ public class Customers {
         boolean funnet = false;
         Customer c = null;
 
-        // TODO
-
+        int i = 0;
+        while(!funnet){
+            if( i == customers.length){
+                break;
+            }
+            else if(customers[i].getCustomer_id() == customer_id){
+                funnet = true;
+                c = customers[i];
+            }
+            else{
+                i++;
+            }
+        }
         return c;
     }
 
@@ -40,7 +51,10 @@ public class Customers {
 
         boolean inserted = false;
 
-        // TODO
+        if(countNonNull() < customers.length){
+            customers[countNonNull()] = c;
+            inserted = true;
+        }
 
         return inserted;
     }
