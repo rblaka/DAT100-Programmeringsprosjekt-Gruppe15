@@ -60,6 +60,7 @@ public class DailyPower {
         // index på begge tabellene. Det gjør at man bare trenger en for-løkke.
         for(int i = 0; i < usage.length; i++){
             support += getSupport(usage[i], prices[i]);
+
         }
         return support;
     }
