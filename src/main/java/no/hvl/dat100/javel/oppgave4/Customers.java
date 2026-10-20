@@ -63,9 +63,9 @@ public class Customers {
     }
 
     // e) remove customer with given id from reference table
-    /*Noen(Meg) følger med i DAT100-timen og har innsett at det var lurt å endre algoritmen til å kun
-    itterere igjennom den delen av listen som kun inneholder kunder, ved bruk av countNonNull-metoden.
-    Takk til Sven-Olai for at vi fikk fremvist denne algoritmen visuelt på tavlen*/
+    /*Noen(Meg) følger med i DAT100-timen. Har innsett at det var lurt å endre algoritmen til å kun
+    itterere igjennom den delen av listen som kun inneholder kunder ved bruk av countNonNull-metoden.
+    Takk til Sven-Olai for at vi fikk en meget praktisk gjennomgang av denne algoritmen ved tavlen*/
     public Customer removeCustomer(int customer_id) {
 
         boolean deleted = false;
