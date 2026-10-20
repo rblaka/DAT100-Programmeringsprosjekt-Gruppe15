@@ -82,10 +82,10 @@ public class DailyPower {
         return support;
     }
 
-    private static final double NORGESPRIS_KWH = 0.5;
+    private static final double NORGESPRIS_KWH = 0.5;//Prisen per kilowatth
 
     // g) compute norges pris for a single day
-    
+    //Rett frem kwh-pris-beregning. 0.5*forbruk per time. Bruker en for-løkke til å itterere gjennom listen slik at man summerer opp total forbrukspris for ett døgn.
     public static double computeNorgesPrice(double[] usage) {
 
         double price = 0;
@@ -96,6 +96,7 @@ public class DailyPower {
     }
 
     // g) compute peak usage during a single day
+    //Finn den timen i døgnet når forbruket var størst.
     public static double findPeakUsage(double[] usage) {
 
         double temp_max = usage[0];
@@ -107,6 +108,7 @@ public class DailyPower {
         return temp_max;
     }
 
+    //Finn gjennomsnitts-strømforbruk ved å itterere igjennom usage-listen, summere opp forbruket og dele på antall elementer i listen.
     public static double findAvgPower(double[] usage) {
 
         double average = 0;
