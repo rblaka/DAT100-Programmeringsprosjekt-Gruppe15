@@ -3,13 +3,16 @@ package no.hvl.dat100.javel.oppgave1;
 public class DailyPower {
 
     // a) print power prices during a day
+    //Bruker for-løkke for å gå igjennom listen prices, og printe ut kr-prisen per kwh fra hvert enkelt element i listen
     public static void printPowerPrices(double[] prices) {
+
         for(int i = 0; i < prices.length; i++){
             System.out.printf("%.2f NOK ", prices[i]);
         }
     }
 
     // b) print power usage during a day
+    //Bruker for-løkke for å gå igjennom listen usage, og printe ut kwh fra hvert enkelt element i listen
     public static void printPowerUsage(double[] usage) {
         for(int i = 0; i < usage.length; i++){
             System.out.printf("%.2f kwh ", usage[i]);
@@ -17,8 +20,10 @@ public class DailyPower {
     }
 
     // c) compute power usage for a single day
+    //Bruker for-løkke for å gå igjennom listen usage, summere alle elementene(Kwh) i listen og returnere summen
     public static double computePowerUsage(double[] usage) {
         double sum = 0;
+
         for(int i = 0; i < usage.length; i++){
             sum += usage[i];
         }
@@ -26,11 +31,14 @@ public class DailyPower {
     }
 
     // d) compute spot price for a single day
+    /*Man må gå utifra at pris og forbruk har lik tabbellstørrelse, og spotpris skal beregnes på samme
+         index på begge tabellene. Det gjør at man bare trenger en for-løkke.
+        Spot-pris beregnes ved å multiplisere forbruket for den timen med kw-prisen for den timen.
+        Dette gjøres for de 24 timene i døgnet. Returnerer pris*/
     public static double computeSpotPrice(double[] usage, double[] prices) {
 
         double price = 0;
-        //Man må gå utifra at pris og forbruk har lik tabbellstørrelse, og spotpris skal beregnes på samme
-        // index på begge tabellene. Det gjør at man bare trenger en for-løkke.
+
         for(int i = 0; i < usage.length; i++){
             price += prices[i] * usage[i];
         }
@@ -39,25 +47,34 @@ public class DailyPower {
     }
 
     // e) compute power support for a given usage and price
+    //Om prisen per kilowatt går over 0.9375 kroner(THRESHOLD) får man 90% avslag(PERCENTAGE) på prisen over grensen.
     private static final double THRESHOLD = 0.9375;
     private static final double PERCENTAGE = 0.9;
 
+    //Sjekk om prisen er over grenseverdi(THRESHOLD) på en av timene i døgnet, hvis ja, beregn støtte(90% avslag(PERCENTAGE) på prisen over grenseverdi) for den timen.
     private static double getSupport(double usage, double price) {
 
         double support = 0;
 
         if(price > THRESHOLD){
-            support += (usage * (price-THRESHOLD)) * PERCENTAGE;
+            support += (usage * (price-THRESHOLD)); //Beregner pris pr kw på alt over 0.9375kroner(Grunnpris)
+            support *= (1-PERCENTAGE); //Sørger for at alt over 0.9375 kroner gir avslag på 90%
+            support += usage * THRESHOLD; //Legger til 0.9375 kroner da det ikke er avslag på grunnprisen.
+
+        }
+        else{
+            support = usage * price; //Hvis price er under THRESHOLD gjør normal spotpris-beregning.
         }
         return support;
     }
 
     // f) compute power support for a single day
+    //Man må gå utifra at pris og forbruk har lik tabbellstørrelse, og spotpris skal beregnes på samme
+    // index på begge tabellene. Det gjør at man bare trenger en for-løkke.
+    //Beregner power-support ved å summere alle tilfeller hvor bruke getSupport-metoden til å beregn
     public static double computePowerSupport(double[] usage, double[] prices) {
 
         double support = 0;
-        //Man må gå utifra at pris og forbruk har lik tabbellstørrelse, og spotpris skal beregnes på samme
-        // index på begge tabellene. Det gjør at man bare trenger en for-løkke.
         for(int i = 0; i < usage.length; i++){
             support += getSupport(usage[i], prices[i]);
 
@@ -68,6 +85,7 @@ public class DailyPower {
     private static final double NORGESPRIS_KWH = 0.5;
 
     // g) compute norges pris for a single day
+    
     public static double computeNorgesPrice(double[] usage) {
 
         double price = 0;
