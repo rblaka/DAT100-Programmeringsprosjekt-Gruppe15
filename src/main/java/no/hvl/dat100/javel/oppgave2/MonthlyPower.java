@@ -2,6 +2,9 @@ package no.hvl.dat100.javel.oppgave2;
 
 import no.hvl.dat100.javel.oppgave1.DailyPower;
 
+/*Denne klassen er laget for å knytte daglig strømforbruk sammen med månedlig forbruk,
+ som brukes til å beregne forbruk og kostnad for kunde-objektet.*/
+
 public class MonthlyPower {
 
     // a) print power usage for a month

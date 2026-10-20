@@ -1,5 +1,7 @@
 package no.hvl.dat100.javel.oppgave1;
 
+/*En klasse som brukes for å beregne strømpriser for en dag(Typisk kwh for 24-timer og strømprisene for 24 timer).
+ Knyttes opp mot Månedlig strøm-og-pris beregning.*/
 public class DailyPower {
 
     // a) print power prices during a day

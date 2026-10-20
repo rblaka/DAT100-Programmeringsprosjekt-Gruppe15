@@ -6,6 +6,8 @@ import no.hvl.dat100.javel.oppgave3.PowerAgreementType;
 
 import java.util.Arrays;
 
+//Klasse som brukes for å skrive ut invoice for en kunde. Har sammenheng med månedlig strømregning og kunde objektene.
+
 public class Invoice {
 
     private Customer c; // customer associated with this invoice
@@ -15,6 +17,7 @@ public class Invoice {
     private double amount; // power price for this month
 
 
+    //Konstruktør
     public Invoice(Customer c, String month, double[][] usage, double[][] power_prices) {
 
         this.c = c;
@@ -25,6 +28,7 @@ public class Invoice {
 
     }
 
+    //Utifra hvilken strømavtale kunden har, beregnes månedlig strømpris deretter.
     public void computeAmount() {
         switch(c.getAgreement())
         {
@@ -41,16 +45,19 @@ public class Invoice {
 
     }
 
-public String toString(){
-    computeAmount();
-    String amountTrunk = String.format("%.2f", amount);//Trimmer bort decimalene til to plasser
-    String usageTrunk = String.format("%.2f", MonthlyPower.computePowerUsage(usage)); //Trimmer bort decimalene til to plasser
-    String output =
-            "Month: " + month + "\r\n" +
-            "Usage: " + usageTrunk  + " kwh" + "\r\n" +
-            "Amount: " + amountTrunk + " kr";
-    return output;
-}
+    //Er formatert til å skrive ut kunderegningene for en spesifikk kunde.
+    public String toString(){
+        computeAmount();
+        String amountTrunk = String.format("%.2f", amount);//Trimmer bort decimalene til to plasser
+        String usageTrunk = String.format("%.2f", MonthlyPower.computePowerUsage(usage)); //Trimmer bort decimalene til to plasser
+        String output =
+                "Month: " + month + "\r\n" +
+                "Usage: " + usageTrunk  + " kwh" + "\r\n" +
+                "Amount: " + amountTrunk + " kr";
+        return output;
+    }
+
+    //Metode som printer ut navn, epost, osv fra kundeobjektet c, og selve regningen fra invoice-objektet -this.
     public void printInvoice() {
         System.out.println(c.toString());
         System.out.println();
