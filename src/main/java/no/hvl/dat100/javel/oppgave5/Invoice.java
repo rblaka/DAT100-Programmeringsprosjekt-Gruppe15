@@ -39,7 +39,7 @@ public class Invoice {
                 amount = MonthlyPower.computeSpotPrice(usage, prices);
                 break;
             case PowerAgreementType.POWERSUPPORT:
-                amount = MonthlyPower.computePowerSupport(usage, prices);
+                amount = MonthlyPower.computeSpotPrice(usage, prices) - MonthlyPower.computePowerSupport(usage, prices);
                 break;
         }
 

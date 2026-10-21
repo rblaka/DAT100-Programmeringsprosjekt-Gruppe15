@@ -1,5 +1,4 @@
 package no.hvl.dat100.javel.oppgave3;
-
 //En klasse for kunne lage kunde-objekter. Dette objektet skal knytte sammen forbruk, strømavtale(Mtp prisberegning) og fakturering.
 
 public class Customer {
@@ -12,7 +11,6 @@ public class Customer {
 
     //Konstruktør
     public Customer(String name, String email, int customer_id, PowerAgreementType agreement) {
-
         this.name = name;
         this.email = email;
         this.customer_id = customer_id;
