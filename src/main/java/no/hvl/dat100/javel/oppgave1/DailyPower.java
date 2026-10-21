@@ -62,7 +62,6 @@ public class DailyPower {
             support += (usage * (price-THRESHOLD)); //Beregner pris pr kw på alt over 0.9375kroner(Grunnpris)
             support *= (1-PERCENTAGE); //Sørger for at alt over 0.9375 kroner gir avslag på 90%
             support += usage * THRESHOLD; //Legger til 0.9375 kroner da det ikke er avslag på grunnprisen.
-
         }
         else{
             support = usage * price; //Hvis price er under THRESHOLD gjør normal spotpris-beregning.

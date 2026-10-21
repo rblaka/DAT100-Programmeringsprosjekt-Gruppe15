@@ -6,7 +6,6 @@ import no.hvl.dat100.javel.oppgave3.PowerAgreementType;
 public class CustomersMain {
 
     public static void main(String[] args) {
-
         System.out.println("==============");
         System.out.println("OPPGAVE 4");
         System.out.println("==============");
@@ -31,10 +30,8 @@ public class CustomersMain {
         System.out.println("Antall kunder i listen: " + customers.countNonNull());
         System.out.println(customers.toString());
 
-
         //Lager en ny kunde og henter peker fra tidligere kunde fra listen og setter den inn.
         Customer newCustomer = customers.getCustomer(1001);
-
 
         //Sletter kunde med kundenummer 1001 og 1003 fra listen, Sjekker om antallet i listen er oppdatert og skriver ut elementene via toString().
         customers.removeCustomer(10);//Finner ikke element, og gjør ingenting.
@@ -51,13 +48,9 @@ public class CustomersMain {
         System.out.println("Antall kunder i listen når kundene er lagt inn igjen: " + customers.countNonNull());
         System.out.println(customers.toString());
 
-
         //Lager ny liste med eksisterende kunder i listen.
         customers.addCustomer(Customer_Rune);
         Customer[] kundeliste = customers.getCustomers();
         //System.out.println(kundeliste[0].toString());
-
-
-
     }
 }
